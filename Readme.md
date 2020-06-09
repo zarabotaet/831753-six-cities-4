@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов» [![Build status][travis-image]][travis-url]
 
 * Студент: [Николай Леонов](https://up.htmlacademy.ru/react/4/user/831753).
-* Наставник: `Неизвестно`.
+* Наставник: [Дмитрий Шулешов](https://htmlacademy.ru/profile/id1322899).
 
 ---
 
