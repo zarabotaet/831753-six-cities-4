@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 const Main = (props) => {
   const {offersCount, offerNames} = props;
-  const offersList = offerNames.map((name, index) => {
+  const offersList = offerNames.map((name) => {
     return (
-      <article key={index + `key`} className="cities__place-card place-card">
+      <article key={name} className="cities__place-card place-card">
         <div className="place-card__mark">
           <span>Premium</span>
         </div>
