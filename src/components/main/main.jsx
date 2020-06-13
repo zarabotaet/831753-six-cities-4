@@ -2,7 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Main = (props) => {
-  const {offersCount, offerNames} = props;
+
+  const {offersCount, offerNames, onTitleClick} = props;
+
   const offersList = offerNames.map((name) => {
     return (
       <article key={name} className="cities__place-card place-card">
@@ -43,7 +45,7 @@ const Main = (props) => {
             </div>
           </div>
           <h2 className="place-card__name">
-            <a href="#">
+            <a href="#" className="place-card__link" onClick={onTitleClick}>
               {name}
             </a>
           </h2>
@@ -181,6 +183,7 @@ const Main = (props) => {
 Main.propTypes = {
   offersCount: PropTypes.number.isRequired,
   offerNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onTitleClick: PropTypes.func.isRequired,
 };
 
 export default Main;
