@@ -37,5 +37,5 @@ it(`Should title be pressed`, () => {
     titleLink.simulate(`click`);
   });
 
-  expect(onTitleClick.mock.calls.length).toBe(titleLinksCount);
+  expect(onTitleClick).toBeCalledTimes(titleLinksCount);
 });
