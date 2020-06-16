@@ -3,10 +3,16 @@ import PropTypes from "prop-types";
 import Main from "../main/main.jsx";
 
 const App = (props) => {
+
   const {offersCount, offerNames} = props;
+  const onTitleClick = () => {};
 
   return (
-    <Main offersCount={offersCount} offerNames={offerNames} />
+    <Main
+      offersCount={offersCount}
+      offerNames={offerNames}
+      onTitleClick={onTitleClick}
+    />
   );
 };
 
