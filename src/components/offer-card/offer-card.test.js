@@ -16,8 +16,8 @@ it(`Should OfferCard render correctly`, () => {
   const tree = renderer
     .create(<OfferCard
       offer={offer}
-      handleCardHover={() => {}}
-      handleCardTitleClick={() => {}}
+      onCardHover={() => {}}
+      onCardTitleClick={() => {}}
     />)
     .toJSON();
 

@@ -20,8 +20,8 @@ class OffersList extends PureComponent {
       return <OfferCard
         key={id}
         offer={offer}
-        handleCardHover={this._handleCardHover}
-        handleCardTitleClick={this._handleCardTitleClick}
+        onCardHover={this._handleCardHover}
+        onCardTitleClick={this._handleCardTitleClick}
       />;
     });
   }

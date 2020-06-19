@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const OfferCard = (props) => {
-  const {offer, handleCardHover, handleCardTitleClick} = props;
+  const {offer, onCardHover, onCardTitleClick} = props;
   const {name, type, price, url, starsCount, isPremium, id} = offer;
 
   const handleHover = () => {
-    handleCardHover(id);
+    onCardHover(id);
   };
 
   const premiumMarkup = isPremium ?
@@ -15,7 +15,7 @@ const OfferCard = (props) => {
     </div>)
     : null;
 
-  const raitingPercent = starsCount * 20 + `%`;
+  const raitingPercent = `${starsCount * 20}%`;
 
   return (
     <article className="cities__place-card place-card" onMouseOver={handleHover}>
@@ -51,7 +51,7 @@ const OfferCard = (props) => {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#" className="place-card__link" onClick={handleCardTitleClick}>
+          <a href="#" className="place-card__link" onClick={onCardTitleClick}>
             {name}
           </a>
         </h2>
@@ -71,8 +71,8 @@ OfferCard.propTypes = {
     isPremium: PropTypes.bool.isRequired,
     id: PropTypes.number.isRequired,
   }).isRequired,
-  handleCardHover: PropTypes.func.isRequired,
-  handleCardTitleClick: PropTypes.func.isRequired,
+  onCardHover: PropTypes.func.isRequired,
+  onCardTitleClick: PropTypes.func.isRequired,
 };
 
 export default OfferCard;
