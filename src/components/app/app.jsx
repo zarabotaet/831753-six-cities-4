@@ -4,21 +4,29 @@ import Main from "../main/main.jsx";
 
 const App = (props) => {
 
-  const {offersCount, offerNames} = props;
-  const onTitleClick = () => {};
+  const {offersCount, offers} = props;
 
   return (
     <Main
       offersCount={offersCount}
-      offerNames={offerNames}
-      onTitleClick={onTitleClick}
+      offers={offers}
     />
   );
 };
 
 App.propTypes = {
   offersCount: PropTypes.number.isRequired,
-  offerNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+  offers: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        url: PropTypes.string.isRequired,
+        starsCount: PropTypes.number.isRequired,
+        isPremium: PropTypes.bool.isRequired,
+        id: PropTypes.number.isRequired,
+      })
+  ).isRequired,
 };
 
 export default App;

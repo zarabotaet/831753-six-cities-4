@@ -1,10 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import App from "./app.jsx";
-
-const Settings = {
-  OFFERS_COUNT: 312,
-};
+import OffersList from "./offers-list.jsx";
 
 const offers = [
   {
@@ -45,10 +41,9 @@ const offers = [
   },
 ];
 
-it(`Render App`, () => {
+it(`Should OffersList render correctly`, () => {
   const tree = renderer
-    .create(<App
-      offersCount={Settings.OFFERS_COUNT}
+    .create(<OffersList
       offers={offers}
     />)
     .toJSON();
