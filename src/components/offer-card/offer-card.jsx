@@ -2,32 +2,24 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const OfferCard = (props) => {
-  const {offer, onCardHover, onTitleClick} = props;
+  const {offer, handleCardHover, handleCardTitleClick} = props;
   const {name, type, price, url, starsCount, isPremium, id} = offer;
 
-  const onHover = () => {
-    onCardHover(id);
+  const handleHover = () => {
+    handleCardHover(id);
   };
 
-  const getPremiumMarkup = () => {
-    if (isPremium) {
-      return (
-        <div className="place-card__mark">
-          <span>Premium</span>
-        </div>
-      );
-    } else {
-      return null;
-    }
-  };
+  const premiumMarkup = isPremium ?
+    (<div className="place-card__mark">
+      <span>Premium</span>
+    </div>)
+    : null;
 
-  const getRaitingPercent = () => {
-    return starsCount * 20;
-  };
+  const raitingPercent = starsCount * 20 + `%`;
 
   return (
-    <article className="cities__place-card place-card" onMouseOver={onHover}>
-      {getPremiumMarkup()}
+    <article className="cities__place-card place-card" onMouseOver={handleHover}>
+      {premiumMarkup}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
           <img
@@ -54,12 +46,12 @@ const OfferCard = (props) => {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: getRaitingPercent()}} />
+            <span style={{width: raitingPercent}} />
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#" className="place-card__link" onClick={onTitleClick}>
+          <a href="#" className="place-card__link" onClick={handleCardTitleClick}>
             {name}
           </a>
         </h2>
@@ -79,8 +71,8 @@ OfferCard.propTypes = {
     isPremium: PropTypes.bool.isRequired,
     id: PropTypes.number.isRequired,
   }).isRequired,
-  onCardHover: PropTypes.func.isRequired,
-  onTitleClick: PropTypes.func.isRequired,
+  handleCardHover: PropTypes.func.isRequired,
+  handleCardTitleClick: PropTypes.func.isRequired,
 };
 
 export default OfferCard;

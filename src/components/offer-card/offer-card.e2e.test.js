@@ -18,32 +18,32 @@ const offer = {
 };
 
 describe(`card tests`, () => {
-  it(`onCardHover argument is the card id?`, () => {
+  it(`handleCardHover argument is the card id?`, () => {
 
-    const onCardHover = jest.fn();
+    const handleCardHover = jest.fn();
 
     const component = shallow(
         <OfferCard
           offer={offer}
-          onCardHover={onCardHover}
-          onTitleClick={() => { }}
+          handleCardHover={handleCardHover}
+          handleCardTitleClick={() => { }}
         />
     );
 
     component.simulate(`mouseover`);
 
-    expect(onCardHover).toHaveBeenCalledWith(offer.id);
+    expect(handleCardHover).toHaveBeenCalledWith(offer.id);
   });
 
-  it(`Is the onTitleClick called when the header is clicked?`, () => {
+  it(`Is the handleCardTitleClick called when the header is clicked?`, () => {
 
-    const onTitleClick = jest.fn();
+    const handleCardTitleClick = jest.fn();
 
     const component = shallow(
         <OfferCard
           offer={offer}
-          onCardHover={() => { }}
-          onTitleClick={onTitleClick}
+          handleCardHover={() => { }}
+          handleCardTitleClick={handleCardTitleClick}
         />
     );
 
@@ -51,6 +51,6 @@ describe(`card tests`, () => {
 
     titleLink.simulate(`click`);
 
-    expect(onTitleClick).toBeCalledTimes(1);
+    expect(handleCardTitleClick).toBeCalledTimes(1);
   });
 });

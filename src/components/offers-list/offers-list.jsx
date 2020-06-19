@@ -15,15 +15,13 @@ class OffersList extends PureComponent {
   }
 
   render() {
-    const {offers} = this.props;
-
-    return offers.map((offer) => {
+    return this.props.offers.map((offer) => {
       const {id} = offer;
       return <OfferCard
         key={id}
         offer={offer}
-        onCardHover={this._handleCardHover}
-        onTitleClick={this._handleCardTitleClick}
+        handleCardHover={this._handleCardHover}
+        handleCardTitleClick={this._handleCardTitleClick}
       />;
     });
   }
