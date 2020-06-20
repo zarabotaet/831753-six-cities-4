@@ -50,6 +50,7 @@ it(`Should Main render correctly`, () => {
     .create(<Main
       offersCount={Settings.OFFERS_COUNT}
       offers={offers}
+      onCardTitleClick={() => {}}
     />)
     .toJSON();
 

@@ -4,7 +4,7 @@ import OffersList from "../offers-list/offers-list.jsx";
 
 const Main = (props) => {
 
-  const {offersCount, offers} = props;
+  const {offersCount, offers, onCardTitleClick} = props;
 
   return (
     <div className="page page--gray page--main">
@@ -118,7 +118,10 @@ const Main = (props) => {
                 */}
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <OffersList offers={offers} />
+                <OffersList
+                  offers={offers}
+                  onCardTitleClick={onCardTitleClick}
+                />
               </div>
             </section>
             <div className="cities__right-section">
@@ -144,6 +147,7 @@ Main.propTypes = {
         id: PropTypes.number.isRequired,
       })
   ).isRequired,
+  onCardTitleClick: PropTypes.func.isRequired,
 };
 
 export default Main;

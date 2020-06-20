@@ -35,9 +35,13 @@ describe(`card tests`, () => {
     expect(onCardHover).toHaveBeenCalledWith(offer.id);
   });
 
-  it(`Is the handleCardTitleClick called when the header is clicked?`, () => {
+  it(`Is the handleCardTitleClick called when the title is clicked?`, () => {
 
     const onCardTitleClick = jest.fn();
+
+    const mockEvent = {
+      preventDefault() {}
+    };
 
     const component = shallow(
         <OfferCard
@@ -49,7 +53,7 @@ describe(`card tests`, () => {
 
     const titleLink = component.find(`.place-card__link`);
 
-    titleLink.simulate(`click`);
+    titleLink.simulate(`click`, mockEvent);
 
     expect(onCardTitleClick).toBeCalledTimes(1);
   });

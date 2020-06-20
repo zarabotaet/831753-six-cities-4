@@ -262,7 +262,7 @@ exports[`Render App 1`] = `
                     <b
                       className="place-card__price-value"
                     >
-                      120
+                      128
                     </b>
                     <span
                       className="place-card__price-text"

@@ -30,7 +30,9 @@ class OffersList extends PureComponent {
     this.setState({activeCardId: id});
   }
 
-  _handleCardTitleClick() {}
+  _handleCardTitleClick(currentOffer) {
+    this.props.onCardTitleClick(currentOffer);
+  }
 }
 
 OffersList.propTypes = {
@@ -45,6 +47,7 @@ OffersList.propTypes = {
         id: PropTypes.number.isRequired,
       })
   ).isRequired,
+  onCardTitleClick: PropTypes.func.isRequired,
 };
 
 export default OffersList;
