@@ -47,7 +47,8 @@ const OfferPage = (props) => {
     );
   });
 
-  const raitingPercent = `${starsCount * 20}%`;
+  const starsQuantity = (starsCount <= 5) ? starsCount : 5;
+  const raitingPercent = `${Math.round(starsQuantity) * 20}%`;
 
   const ownerClassName = (owner.isSuper) ?
     `property__avatar-wrapper property__avatar-wrapper--pro user__avatar-wrapper`
@@ -121,7 +122,7 @@ const OfferPage = (props) => {
                   <span className="visually-hidden">Rating</span>
                 </div>
                 <span className="property__rating-value rating__value">
-                  {starsCount}
+                  {starsQuantity}
                 </span>
               </div>
               <ul className="property__features">

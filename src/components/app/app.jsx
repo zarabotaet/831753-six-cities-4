@@ -12,15 +12,10 @@ class App extends PureComponent {
       offer: null,
     };
 
-    this._offersCount = this.props.offersCount;
-    this._offers = this.props.offers;
-
     this._handleCardTitleClick = this._handleCardTitleClick.bind(this);
   }
 
   render() {
-    const offer = this._offers[0];
-
     return (
       <BrowserRouter>
         <Switch>
@@ -28,7 +23,7 @@ class App extends PureComponent {
             {this._renderPage()}
           </Route>
           <Route exact path="/dev-offer">
-            <OfferPage offer={offer} />
+            <OfferPage offer={this.props.offers[0]} />
           </Route>
         </Switch>
       </BrowserRouter>
@@ -45,8 +40,8 @@ class App extends PureComponent {
     } else {
       return (
         <Main
-          offersCount={this._offersCount}
-          offers={this._offers}
+          offersCount={this.props.offersCount}
+          offers={this.props.offers}
           onCardTitleClick={this._handleCardTitleClick}
         />
       );

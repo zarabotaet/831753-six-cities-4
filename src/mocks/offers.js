@@ -26,7 +26,7 @@ export default [
     price: 128,
     url: `img/apartment-01.jpg`,
     urls: [`img/apartment-01.jpg`, `img/apartment-02.jpg`, `img/apartment-03.jpg`, `img/room.jpg`],
-    starsCount: 4,
+    starsCount: 3.7,
     bedroomsCount: 4,
     guestsCount: 8,
     isPremium: true,
