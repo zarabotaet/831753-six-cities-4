@@ -9,6 +9,12 @@ const OfferCard = (props) => {
     onCardHover(id);
   };
 
+  const handleTitleClick = (evt) => {
+    evt.preventDefault();
+
+    onCardTitleClick(offer);
+  };
+
   const premiumMarkup = isPremium ?
     (<div className="place-card__mark">
       <span>Premium</span>
@@ -51,7 +57,7 @@ const OfferCard = (props) => {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#" className="place-card__link" onClick={onCardTitleClick}>
+          <a href="#" className="place-card__link" onClick={handleTitleClick}>
             {name}
           </a>
         </h2>

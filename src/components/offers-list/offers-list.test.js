@@ -45,6 +45,7 @@ it(`Should OffersList render correctly`, () => {
   const tree = renderer
     .create(<OffersList
       offers={offers}
+      onCardTitleClick={() => {}}
     />)
     .toJSON();
 
