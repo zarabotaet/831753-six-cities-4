@@ -137,7 +137,13 @@ it(`Render App`, () => {
     .create(<App
       offersCount={Settings.OFFERS_COUNT}
       offers={offers}
-    />)
+    />,
+    {
+      createNodeMock: () => {
+        return document.createElement(`div`);
+      }
+    }
+    )
     .toJSON();
 
   expect(tree).toMatchSnapshot();

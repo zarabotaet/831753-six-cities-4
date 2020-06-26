@@ -18,10 +18,6 @@ class Map extends PureComponent {
   }
 
   componentDidMount() {
-    if (!this._mapRef.current) {
-      return;
-    }
-
     const city = [52.38333, 4.9];
 
     const icon = leaflet.icon({

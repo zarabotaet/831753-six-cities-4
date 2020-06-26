@@ -8,7 +8,14 @@ const coordinates = [
 
 it(`Should Map render correctly`, () => {
   const tree = renderer
-    .create(<Map coordinates={coordinates} />)
+    .create(
+        <Map coordinates={coordinates} />,
+        {
+          createNodeMock: () => {
+            return document.createElement(`div`);
+          }
+        }
+    )
     .toJSON();
 
   expect(tree).toMatchSnapshot();

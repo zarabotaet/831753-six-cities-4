@@ -55,7 +55,13 @@ it(`Should Main render correctly`, () => {
       offersCount={Settings.OFFERS_COUNT}
       offers={offers}
       onCardTitleClick={() => {}}
-    />)
+    />,
+    {
+      createNodeMock: () => {
+        return document.createElement(`div`);
+      }
+    }
+    )
     .toJSON();
 
   expect(tree).toMatchSnapshot();
