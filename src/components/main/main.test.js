@@ -14,6 +14,7 @@ const offers = [
     url: `img/apartment-01.jpg`,
     starsCount: 4,
     isPremium: true,
+    coordinates: [52.3809553943508, 4.939309666406198],
     id: 1,
   },
   {
@@ -23,6 +24,7 @@ const offers = [
     url: `img/apartment-02.jpg`,
     starsCount: 4,
     isPremium: false,
+    coordinates: [52.3809553943508, 4.939309666406198],
     id: 2,
   },
   {
@@ -32,6 +34,7 @@ const offers = [
     url: `img/apartment-03.jpg`,
     starsCount: 4,
     isPremium: false,
+    coordinates: [52.3809553943508, 4.939309666406198],
     id: 3,
   },
   {
@@ -41,6 +44,7 @@ const offers = [
     url: `img/room.jpg`,
     starsCount: 5,
     isPremium: true,
+    coordinates: [52.3809553943508, 4.939309666406198],
     id: 4,
   },
 ];
@@ -51,7 +55,13 @@ it(`Should Main render correctly`, () => {
       offersCount={Settings.OFFERS_COUNT}
       offers={offers}
       onCardTitleClick={() => {}}
-    />)
+    />,
+    {
+      createNodeMock: () => {
+        return document.createElement(`div`);
+      }
+    }
+    )
     .toJSON();
 
   expect(tree).toMatchSnapshot();

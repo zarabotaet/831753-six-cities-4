@@ -38,6 +38,7 @@ const offers = [
     bedroomsCount: 4,
     guestsCount: 8,
     isPremium: true,
+    coordinates: [52.3809553943508, 4.939309666406198],
     id: 1,
   },
   {
@@ -67,6 +68,7 @@ const offers = [
     bedroomsCount: 3,
     guestsCount: 6,
     isPremium: false,
+    coordinates: [52.3809553943508, 4.939309666406198],
     id: 2,
   },
   {
@@ -94,6 +96,7 @@ const offers = [
     bedroomsCount: 2,
     guestsCount: 4,
     isPremium: false,
+    coordinates: [52.3809553943508, 4.939309666406198],
     id: 3,
   },
   {
@@ -124,6 +127,7 @@ const offers = [
     bedroomsCount: 1,
     guestsCount: 2,
     isPremium: true,
+    coordinates: [52.3809553943508, 4.939309666406198],
     id: 4,
   },
 ];
@@ -133,7 +137,13 @@ it(`Render App`, () => {
     .create(<App
       offersCount={Settings.OFFERS_COUNT}
       offers={offers}
-    />)
+    />,
+    {
+      createNodeMock: () => {
+        return document.createElement(`div`);
+      }
+    }
+    )
     .toJSON();
 
   expect(tree).toMatchSnapshot();

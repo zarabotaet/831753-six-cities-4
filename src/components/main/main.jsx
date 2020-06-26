@@ -1,10 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import OffersList from "../offers-list/offers-list.jsx";
+import Map from "../map/map.jsx";
 
 const Main = (props) => {
 
   const {offersCount, offers, onCardTitleClick} = props;
+
+  const coordinates = offers.map((offer) => {
+    return offer.coordinates;
+  });
 
   return (
     <div className="page page--gray page--main">
@@ -125,7 +130,7 @@ const Main = (props) => {
               </div>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map" />
+              <Map coordinates={coordinates} />
             </div>
           </div>
         </div>
@@ -144,6 +149,7 @@ Main.propTypes = {
         url: PropTypes.string.isRequired,
         starsCount: PropTypes.number.isRequired,
         isPremium: PropTypes.bool.isRequired,
+        coordinates: PropTypes.arrayOf(PropTypes.number),
         id: PropTypes.number.isRequired,
       })
   ).isRequired,

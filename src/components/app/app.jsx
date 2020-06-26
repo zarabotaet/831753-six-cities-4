@@ -75,6 +75,7 @@ App.propTypes = {
         bedroomsCount: PropTypes.number.isRequired,
         guestsCount: PropTypes.number.isRequired,
         isPremium: PropTypes.bool.isRequired,
+        coordinates: PropTypes.arrayOf(PropTypes.number),
         id: PropTypes.number.isRequired,
       })
   ).isRequired,
