@@ -130,7 +130,9 @@ const Main = (props) => {
               </div>
             </section>
             <div className="cities__right-section">
-              <Map coordinates={coordinates} />
+              <section className="cities__map map">
+                <Map coordinates={coordinates} />
+              </section>
             </div>
           </div>
         </div>

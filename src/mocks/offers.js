@@ -31,6 +31,17 @@ export default [
     guestsCount: 8,
     isPremium: true,
     coordinates: [52.3909553943508, 4.85309666406198],
+    reviews: [
+      {
+        text: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+        The building is green and from 18th century.`,
+        starsCount: 1,
+        url: `img/avatar-max.jpg`,
+        name: `Max`,
+        date: `April 2089`,
+        id: 1,
+      },
+    ],
     id: 1,
   },
   {
@@ -61,6 +72,32 @@ export default [
     guestsCount: 6,
     isPremium: false,
     coordinates: [52.369553943508, 4.85309666406198],
+    reviews: [
+      {
+        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+        starsCount: 4,
+        url: `img/avatar-max.jpg`,
+        name: `Max`,
+        date: `March 17, 2019`,
+        id: 1,
+      },
+      {
+        text: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+        sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+        sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.`,
+        starsCount: 3,
+        url: `img/avatar-angelina.jpg`,
+        name: `Kate`,
+        date: `July 22, 2020`,
+        id: 2,
+      },
+    ],
     id: 2,
   },
   {
@@ -89,6 +126,19 @@ export default [
     guestsCount: 4,
     isPremium: false,
     coordinates: [52.3909553943508, 4.929309666406198],
+    reviews: [
+      {
+        text: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+        sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+        sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.`,
+        starsCount: 3,
+        url: `img/avatar-angelina.jpg`,
+        name: `Kate`,
+        date: `May 7, 2020`,
+        id: 1,
+      },
+    ],
     id: 3,
   },
   {
@@ -120,6 +170,21 @@ export default [
     guestsCount: 2,
     isPremium: true,
     coordinates: [52.3809553943508, 4.939309666406198],
+    reviews: [
+      {
+        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+        starsCount: 4,
+        url: `img/avatar-max.jpg`,
+        name: `Max`,
+        date: `April 24, 2019`,
+        id: 1,
+      },
+    ],
     id: 4,
   },
 ];

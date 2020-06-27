@@ -11,7 +11,7 @@ class OffersList extends PureComponent {
     };
 
     this._handleCardHover = this._handleCardHover.bind(this);
-    this._handleCardTitleClick = this._handleCardTitleClick.bind(this);
+    // this._handleCardTitleClick = this._handleCardTitleClick.bind(this);
   }
 
   render() {
@@ -30,9 +30,9 @@ class OffersList extends PureComponent {
     this.setState({activeCardId: id});
   }
 
-  _handleCardTitleClick(currentOffer) {
-    this.props.onCardTitleClick(currentOffer);
-  }
+  // _handleCardTitleClick(currentOffer) {
+  //   // this.props.onCardTitleClick(currentOffer);
+  // }
 }
 
 OffersList.propTypes = {
@@ -47,7 +47,7 @@ OffersList.propTypes = {
         id: PropTypes.number.isRequired,
       })
   ).isRequired,
-  onCardTitleClick: PropTypes.func.isRequired,
+  // onCardTitleClick: PropTypes.func.isRequired,
 };
 
 export default OffersList;

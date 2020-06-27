@@ -16,6 +16,8 @@ class App extends PureComponent {
   }
 
   render() {
+    const nearestOffers = this.props.offers.slice(2, 4);
+
     return (
       <BrowserRouter>
         <Switch>
@@ -23,7 +25,7 @@ class App extends PureComponent {
             {this._renderPage()}
           </Route>
           <Route exact path="/dev-offer">
-            <OfferPage offer={this.props.offers[0]} />
+            <OfferPage offer={this.props.offers[1]} nearestOffers={nearestOffers} />
           </Route>
         </Switch>
       </BrowserRouter>
@@ -35,7 +37,11 @@ class App extends PureComponent {
 
     if (offer) {
       return (
-        <OfferPage offer={offer} />
+        <OfferPage
+          offer={offer}
+          nearestOffers={this.props.offers}
+          onCardTitleClick={this._handleCardTitleClick}
+        />
       );
     } else {
       return (
