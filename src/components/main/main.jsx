@@ -4,12 +4,12 @@ import OffersList from "../offers-list/offers-list.jsx";
 import Map from "../map/map.jsx";
 
 const Main = (props) => {
-
   const {offersCount, offers, onCardTitleClick} = props;
 
-  const coordinates = offers.map((offer) => {
-    return offer.coordinates;
-  });
+  const markers = offers.map(({coordinates, id}) => ({
+    coordinates,
+    id,
+  }));
 
   return (
     <div className="page page--gray page--main">
@@ -87,7 +87,9 @@ const Main = (props) => {
           <div className="cities__places-container container">
             <section className="cities__places places">
               <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">{offersCount} places to stay in Amsterdam</b>
+              <b className="places__found">
+                {offersCount} places to stay in Amsterdam
+              </b>
               <form className="places__sorting" action="#" method="get">
                 <span className="places__sorting-caption">Sort by</span>
                 <span className="places__sorting-type" tabIndex={0}>
@@ -130,7 +132,9 @@ const Main = (props) => {
               </div>
             </section>
             <div className="cities__right-section">
-              <Map coordinates={coordinates} />
+              <section className="cities__map map">
+                <Map markers={markers} />
+              </section>
             </div>
           </div>
         </div>

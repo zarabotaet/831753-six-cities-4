@@ -9,7 +9,7 @@ class App extends PureComponent {
     super(props);
 
     this.state = {
-      offer: null,
+      currentId: null,
     };
 
     this._handleCardTitleClick = this._handleCardTitleClick.bind(this);
@@ -23,7 +23,11 @@ class App extends PureComponent {
             {this._renderPage()}
           </Route>
           <Route exact path="/dev-offer">
-            <OfferPage offer={this.props.offers[0]} />
+            <OfferPage
+              currentId={1}
+              offers={this.props.offers}
+              onCardTitleClick={this._handleCardTitleClick}
+            />
           </Route>
         </Switch>
       </BrowserRouter>
@@ -31,11 +35,15 @@ class App extends PureComponent {
   }
 
   _renderPage() {
-    const offer = this.state.offer;
+    const currentId = this.state.currentId;
 
-    if (offer) {
+    if (currentId) {
       return (
-        <OfferPage offer={offer} />
+        <OfferPage
+          currentId={currentId}
+          offers={this.props.offers}
+          onCardTitleClick={this._handleCardTitleClick}
+        />
       );
     } else {
       return (
@@ -48,9 +56,9 @@ class App extends PureComponent {
     }
   }
 
-  _handleCardTitleClick(currentOffer) {
+  _handleCardTitleClick(id) {
     this.setState({
-      offer: currentOffer,
+      currentId: id,
     });
   }
 }

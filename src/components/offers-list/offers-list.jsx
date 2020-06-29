@@ -11,7 +11,6 @@ class OffersList extends PureComponent {
     };
 
     this._handleCardHover = this._handleCardHover.bind(this);
-    this._handleCardTitleClick = this._handleCardTitleClick.bind(this);
   }
 
   render() {
@@ -21,17 +20,13 @@ class OffersList extends PureComponent {
         key={id}
         offer={offer}
         onCardHover={this._handleCardHover}
-        onCardTitleClick={this._handleCardTitleClick}
+        onCardTitleClick={this.props.onCardTitleClick}
       />;
     });
   }
 
   _handleCardHover(id) {
     this.setState({activeCardId: id});
-  }
-
-  _handleCardTitleClick(currentOffer) {
-    this.props.onCardTitleClick(currentOffer);
   }
 }
 

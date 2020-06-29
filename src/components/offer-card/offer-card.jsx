@@ -12,7 +12,7 @@ const OfferCard = (props) => {
   const handleTitleClick = (evt) => {
     evt.preventDefault();
 
-    onCardTitleClick(offer);
+    onCardTitleClick(id);
   };
 
   const premiumMarkup = isPremium ?
