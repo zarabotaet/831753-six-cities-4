@@ -1,4 +1,5 @@
 import React from "react";
+import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import Reviews from "../reviews/reviews.jsx";
 import Map from "../map/map.jsx";
@@ -218,4 +219,11 @@ OfferPage.propTypes = {
   onCardTitleClick: PropTypes.func.isRequired,
 };
 
-export default OfferPage;
+const mapStateToProps = (state) => {
+  return {
+    offers: state.offers,
+  };
+};
+
+export {OfferPage};
+export default connect(mapStateToProps)(OfferPage);

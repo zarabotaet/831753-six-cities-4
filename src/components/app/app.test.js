@@ -1,10 +1,17 @@
 import React from "react";
 import renderer from "react-test-renderer";
+import {Provider} from "react-redux";
+import configureStore from "redux-mock-store";
 import App from "./app.jsx";
 
-const Settings = {
-  OFFERS_COUNT: 312,
-};
+const mockStore = configureStore([]);
+
+const cities = [
+  {
+    name: `Amsterdam`,
+    id: 1,
+  },
+];
 
 const offers = [
   {
@@ -62,16 +69,23 @@ const offers = [
 ];
 
 it(`Render App`, () => {
+  const store = mockStore({
+    city: `Paris`,
+    offers,
+  });
+
   const tree = renderer
-    .create(<App
-      offersCount={Settings.OFFERS_COUNT}
-      offers={offers}
-    />,
-    {
-      createNodeMock: () => {
-        return document.createElement(`div`);
-      }
-    }
+    .create(
+        <Provider store={store}>
+          <App
+            cities={cities}
+          />
+        </Provider>,
+        {
+          createNodeMock: () => {
+            return document.createElement(`div`);
+          }
+        }
     )
     .toJSON();
 
