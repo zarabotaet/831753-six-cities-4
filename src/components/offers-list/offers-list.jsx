@@ -20,7 +20,6 @@ class OffersList extends PureComponent {
         key={id}
         offer={offer}
         onCardHover={this._handleCardHover}
-        onCardTitleClick={this.props.onCardTitleClick}
       />;
     });
   }
@@ -42,7 +41,6 @@ OffersList.propTypes = {
         id: PropTypes.number.isRequired,
       })
   ).isRequired,
-  onCardTitleClick: PropTypes.func.isRequired,
 };
 
 export default OffersList;

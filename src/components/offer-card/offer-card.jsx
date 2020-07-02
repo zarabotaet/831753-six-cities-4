@@ -1,18 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {Link} from "react-router-dom";
 
 const OfferCard = (props) => {
-  const {offer, onCardHover, onCardTitleClick} = props;
+  const {offer, onCardHover} = props;
   const {name, type, price, url, starsCount, isPremium, id} = offer;
 
   const handleHover = () => {
     onCardHover(id);
-  };
-
-  const handleTitleClick = (evt) => {
-    evt.preventDefault();
-
-    onCardTitleClick(id);
   };
 
   const premiumMarkup = isPremium ?
@@ -57,9 +52,9 @@ const OfferCard = (props) => {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#" className="place-card__link" onClick={handleTitleClick}>
+          <Link to={`/offers/${id}`} className="place-card__link">
             {name}
-          </a>
+          </Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

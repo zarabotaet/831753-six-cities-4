@@ -6,7 +6,8 @@ import Map from "../map/map.jsx";
 import OffersList from "../offers-list/offers-list.jsx";
 
 const OfferPage = (props) => {
-  const {currentId, offers, onCardTitleClick} = props;
+  const {offers} = props;
+  const currentId = Number(props.match.params.id);
   const currentOffer = offers.find((offer) => offer.id === currentId);
   const nearestOffers = offers.filter((offer) => offer.id !== currentId);
 
@@ -184,7 +185,6 @@ const OfferPage = (props) => {
             <div className="near-places__list places__list">
               <OffersList
                 offers={nearestOffers}
-                onCardTitleClick={onCardTitleClick}
               />
             </div>
           </section>
@@ -215,8 +215,11 @@ OfferPage.propTypes = {
     coordinates: PropTypes.arrayOf(PropTypes.number),
     id: PropTypes.number.isRequired,
   })).isRequired,
-  currentId: PropTypes.number.isRequired,
-  onCardTitleClick: PropTypes.func.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
 };
 
 const mapStateToProps = (state) => {

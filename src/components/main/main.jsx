@@ -6,7 +6,7 @@ import OffersList from "../offers-list/offers-list.jsx";
 import Map from "../map/map.jsx";
 
 const Main = (props) => {
-  const {city, offers, cities, onCardTitleClick} = props;
+  const {city, offers, cities} = props;
 
   const markers = offers.map(({coordinates, id}) => ({
     coordinates,
@@ -96,7 +96,6 @@ const Main = (props) => {
               <div className="cities__places-list places__list tabs__content">
                 <OffersList
                   offers={offers}
-                  onCardTitleClick={onCardTitleClick}
                 />
               </div>
             </section>
@@ -130,7 +129,6 @@ Main.propTypes = {
     name: PropTypes.string,
     id: PropTypes.number,
   })).isRequired,
-  onCardTitleClick: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => {
